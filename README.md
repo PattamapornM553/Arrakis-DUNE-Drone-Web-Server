@@ -1,4 +1,4 @@
-# Arrakis-DUNE Drone Survey Archive (Web README)
+# Arrakis-DUNE Drone Survey Archive
 
 ## เกี่ยวกับโปรเจกต์
 
