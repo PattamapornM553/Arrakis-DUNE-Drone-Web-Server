@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a1808">
+<title>Arrakis Drone Survey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+<div class="fog" aria-hidden="true"></div>
+<div class="sand" aria-hidden="true"></div>
+<div class="scan" aria-hidden="true"></div>
+<div class="hud-ring" aria-hidden="true"><i></i></div>
+<div class="drone" aria-hidden="true">
+  <div class="drone-body">
+    <span class="beam"></span>
+    <div class="craft">
+      <img class="hull" src="ornithopter-b.png" alt="">
+      <img class="wings" src="ornithopter-a.png" alt="">
+      <span class="glow"></span>
+    </div>
+  </div>
+</div>
+<div class="fremen" aria-hidden="true">
+  <span class="shadow"></span>
+  <div class="figure">
+    <img class="cloak" src="fremen-a.png" alt="">
+    <img class="body" src="fremen-b.png" alt="">
+  </div>
+  <span class="dust"></span>
+</div>
+
+<header>
+  <div class="topbar" aria-hidden="true">
+    <span class="mark"></span>
+    <span>Web Application Development</span>
+    <span class="live"><i></i> Signal Online</span>
+  </div>
+
+  <div class="title-row">
+    <span class="rule" aria-hidden="true"></span>
+    <h1>ARRAKIS</h1>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <p class="tag">Arrakis Drone Survey Archive<span id="sub"></span></p>
+
+  <nav>
+    <a href="#config"><small aria-hidden="true">01</small>View Config</a>
+    <a href="#form"><small aria-hidden="true">02</small>Record Heat</a>
+    <a href="#logs"><small aria-hidden="true">03</small>Heat Archive</a>
+  </nav>
+</header>
+
+<main>
+  <section id="config" class="panel">
+    <div class="meta" aria-hidden="true"><span>Sector 01</span><span>Drone status</span></div>
+    <h2>Drone Config</h2>
+    <div id="cfg" class="grid"></div>
+  </section>
+
+  <section id="form" class="panel" hidden>
+    <div class="meta" aria-hidden="true"><span>Sector 02</span><span>Thermal Reading</span></div>
+    <h2>Temperature Log</h2>
+    <form id="f">
+      <label for="t">Temperature in Celsius</label>
+      <div class="field">
+        <input id="t" type="number" step="any" required placeholder="45">
+        <span class="unit" aria-hidden="true">°C</span>
+      </div>
+      <button type="submit">Submit data</button>
+    </form>
+    <p id="msg" role="status"></p>
+  </section>
+
+  <section id="logs" class="panel" hidden>
+    <div class="meta" aria-hidden="true"><span>Sector 03</span><span>Archive Feed</span></div>
+    <h2>Drone Logs</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Created</th><th>Country</th><th>Drone ID</th><th>Drone Name</th><th>Celsius</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <button id="prev" type="button">Previous</button>
+      <span id="pg"></span>
+      <button id="next" type="button">Next</button>
+    </div>
+  </section>
+</main>
+
+<footer aria-hidden="true">
+  <span>The spice must flow</span>
+  <span class="tri"></span>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
